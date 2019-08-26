@@ -19,5 +19,6 @@ TestCases - contains folders with project's areas tests input
 |-CloudPoint - area example, contains tests input for Point of cloud area
 | |- *.txt
 UnitTests - contains actual code for automated testing
+|-CloudPoint - area example, contains actual code for automated testing for Point of cloud area
 | |- *.cpp
 	
