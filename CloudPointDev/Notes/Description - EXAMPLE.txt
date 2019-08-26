@@ -1,0 +1,23 @@
+Project structure:
+src - contains project source code
+|-Abstraction - contains folders with project's areas abstarctions
+| |					!Abstractions are provided interfaces. Tests are built using them,
+| |					!auto documentation mark-up is also written here
+| |					!usually *.h or *.hpp
+| |-CloudPoint - area example, contains abstractions for Point of cloud area
+|   |- *.h
+|-Implementation - contains folders with project's areas implementation for respective abstractions
+| |					!Implementations is actual code-behind respective abstractions
+| |-CloudPoint - area example, contains implementations for Point of cloud area
+| | |- *.cpp
+Documents - contains auto generated documentation and other docs
+Resources - project resources, like images or input files, local config
+Notes - micselenious files.
+
+/*** Testing branch also contains ***/
+TestCases - contains folders with project's areas tests input
+|-CloudPoint - area example, contains tests input for Point of cloud area
+| |- *.txt
+UnitTests - contains actual code for automated testing
+| |- *.cpp
+	
