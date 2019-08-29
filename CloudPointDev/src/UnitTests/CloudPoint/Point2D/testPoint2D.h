@@ -1,7 +1,10 @@
-#include "D:\prog\PhotonWorkspace\CloudPointRepository\CloudPointDev\cute\cute.h"
-#include "D:\prog\PhotonWorkspace\CloudPointRepository\CloudPointDev\cute\ide_listener.h"
-#include "D:\prog\PhotonWorkspace\CloudPointRepository\CloudPointDev\cute\xml_listener.h"
-#include "D:\prog\PhotonWorkspace\CloudPointRepository\CloudPointDev\cute\cute_runner.h"
+#ifndef TESTPOINT2D_H_
+#define TESTPOINT2D_H_
+
+#include "cute.h"
+#include "ide_listener.h"
+#include "xml_listener.h"
+#include "cute_runner.h"
 
 #include <fstream>
 #include <vector>
@@ -9,17 +12,18 @@
 #include <functional>
 
 #include "CloudOfPoints/Point2D.h"
-#include "PointParse.h"
+#include "Utils/PointParse.h"
 
 #define EQUALITY_PRESICION 0.000001
 
 Point2D a, b, ops[4];
 std::string tostring;
-char testcasePath[] = "TestCases/CloudPoint/Point2D/test1.txt"
+float n;
+char testcasePath[] = "TestCases/PointCloud/Point2D/test1.txt";
 
 
 
-void SetUp()
+void setUp()
 {
 	ifstream infile(testcasePath);
 
@@ -32,6 +36,9 @@ void SetUp()
 	b = getPointFromString(s.c_str());
 
 	std::getline(infile, s);
+	n = atof(s.c_str());
+
+	std::getline(infile, s);
 	for (int i = 0; i < 4; i++)
 	{
 		std::getline(infile, s);
@@ -39,7 +46,7 @@ void SetUp()
 	}
 
 	std::getline(infile, tostring);
-	close(infile);
+	infile.close();
 }
 
 void indexOperator()
@@ -59,36 +66,37 @@ void sum()
 	ASSERTM("Sum failed", result);
 }
 
-void subst()
+void substraction()
 {
-	bool result = distance(a + b, ops[1]) <= EQUALITY_PRESICION;
+	bool result = distance(a - b, ops[1]) <= EQUALITY_PRESICION;
 	ASSERTM("Subtraction failed", result);
 }
-void mult()
+void multiplication()
 {
-	bool result = distance(a + b, ops[2]) <= EQUALITY_PRESICION;
+	bool result = distance(a * n, ops[2]) <= EQUALITY_PRESICION;
 	ASSERTM("Multiplication failed", result);
 }
-void div()
+void division()
 {
-	bool result = distance(a + b, ops[3]) <= EQUALITY_PRESICION;
+	bool result = distance(a / n, ops[3]) <= EQUALITY_PRESICION;
 	ASSERTM("Division failed", result);
 }
 
-void str()
+void toString()
 {
 	ASSERT_EQUALM("To string operation failes", tostring, a.toString());
 }
 
 bool runAllTests(int argc, char const *argv[])
 {
+	setUp();
 	cute::suite s { };
 	s.push_back(CUTE(indexOperator));
 	s.push_back(CUTE(sum));
-	s.push_back(CUTE(subst));
-	s.push_back(CUTE(mult));
-	s.push_back(CUTE(div));
-	s.push_back(CUTE(str));
+	s.push_back(CUTE(substraction));
+	s.push_back(CUTE(multiplication));
+	s.push_back(CUTE(division));
+	s.push_back(CUTE(toString));
 
 	cute::xml_file_opener xmlfile(argc, argv);
 	cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
@@ -96,3 +104,6 @@ bool runAllTests(int argc, char const *argv[])
 	bool success = runner(s, "AllTests");
 	return success;
 }
+
+
+#endif

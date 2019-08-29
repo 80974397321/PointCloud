@@ -24,7 +24,7 @@ float distance(Point2D p1, Point2D p2)
 	float dx = p1[POINT2D_X] - p2[POINT2D_X],
 		  dy = p1[POINT2D_Y] - p2[POINT2D_Y];
 
-	float d = dx * dx + dy * dy
+	float d = dx * dx + dy * dy;
 	return sqrt(d);
 }
 #endif
