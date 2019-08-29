@@ -1,17 +1,17 @@
 /*
- * Point2D.cpp
+ * MyFunctions.cpp
  *
  *  Created on: Aug 25, 2019
  *      Author: u1
  */
 
-#include "Point2D.h"
+#include "CloudOfPoints/MyFunctions.h"
 
-Point2D::Point2D() {
+MyFunctions::MyFunctions() {
 	// TODO Auto-generated constructor stub
 
 }
 
-Point2D::~Point2D() {
+MyFunctions::~MyFunctions() {
 	// TODO Auto-generated destructor stub
 }
