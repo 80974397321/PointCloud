@@ -7,10 +7,10 @@
 //============================================================================
 
 #include <iostream>
-#include "CloudOfPoints/Point2D.h"
-#include "CloudOfPoints/MyFunctions.h"
-#include "CloudOfPoints/AbstractAlgorithm.h"
-#include "CloudOfPoints/AlgorithmFindTheCenterOfTheMass.h"
+#include "Point2D.h"
+#include "MyFunctions.h"
+#include "AbstractAlgorithm.h"
+#include "AlgorithmFindTheCenterOfTheMass.h"
 #include <iostream>
 #include <string>
 #include <vector>
