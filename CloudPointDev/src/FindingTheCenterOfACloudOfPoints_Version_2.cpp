@@ -7,7 +7,7 @@
 //============================================================================
 
 #include <iostream>
-#include "CloudOfPoints/ClodPoint2D.h"
+#include "CloudOfPoints/Point2D.h"
 #include "CloudOfPoints/MyFunctions.h"
 #include "CloudOfPoints/AbstractAlgorithm.h"
 #include "CloudOfPoints/AlgorithmFindTheCenterOfTheMass.h"
