@@ -42,15 +42,9 @@ public:
 			return true;
 	}
 	*/
-	virtual bool add(ItemsType item)
-	{
-		return true;
-	}
-	virtual bool clear()
-	{
-		return true;
-	}
-	virtual AnswerType getResult(){return AnswerType();};
+	virtual bool add(ItemsType item)=0;
+	virtual bool clear()=0;
+	virtual AnswerType getResult()=0;
 };
 
 #endif /* ABSTRACTALGORITHM_H_ */

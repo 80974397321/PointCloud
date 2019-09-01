@@ -29,6 +29,7 @@ public:
 		items.clear();
 		return true;
 	}
+	virtual AnswerType getResult()=0;
 	virtual ~AbstractAlgorithmPointsSaved(){}
 };
 
