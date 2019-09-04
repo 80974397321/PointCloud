@@ -5,7 +5,7 @@
  *      Author: u1
  */
 
-#include "Point2D.h"
+#include "CloudOfPoints/Point2D.h"
 
 Point2D::Point2D() {
 	// TODO Auto-generated constructor stub
