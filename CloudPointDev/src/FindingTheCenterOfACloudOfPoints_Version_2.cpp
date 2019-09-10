@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : FindingTheCenterOfACloudOfPoints_Version_2.cpp
-// Author      : Dennis
+// Author      : Dennis Ohrimchuck
 // Version     :
 // Copyright   : Hi everyone
 // Description : Hello World in C++, Ansi-style
